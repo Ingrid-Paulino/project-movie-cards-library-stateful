@@ -11,12 +11,14 @@ class SearchBar extends Component {
       onSelectedGenreChange } = this.props;
 
     return (
-      <h2>oiiiiiiiiiiiiiiiiiii</h2>
+      <form data-testid="search-bar-form">
+        <h3>Adicionado tag de form</h3>
+      </form>
     );
   }
 }
 
-// SearchBar.propTypes = {
+SearchBar.propTypes = {
 
-// };
+};
 export default SearchBar;
