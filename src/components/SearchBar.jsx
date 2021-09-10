@@ -1,12 +1,14 @@
 // implement SearchBar component here
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import TextInput from './TextInput';
 import FavoriteInput from './FavoriteInput';
 import SelectGenre from './SelectGenre ';
 
 export default class SearchBar extends Component {
   render() {
-    const { searchText,
+    const {
+      searchText,
       onSearchTextChange,
       bookmarkedOnly,
       onBookmarkedChange,
@@ -22,3 +24,12 @@ export default class SearchBar extends Component {
     );
   }
 }
+
+SearchBar.propTypes = {
+  searchText: PropTypes.string,
+  onSearchTextChange: PropTypes.func,
+  bookmarkedOnly: PropTypes.bool,
+  onBookmarkedChange: PropTypes.func,
+  selectedGenre: PropTypes.string,
+  onSelectedGenreChange: PropTypes.func,
+}.isRequired;

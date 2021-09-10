@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class FavoriteInput extends Component {
   render() {
@@ -18,3 +19,8 @@ export default class FavoriteInput extends Component {
     );
   }
 }
+
+FavoriteInput.propTypes = {
+  checked: PropTypes.bool,
+  onChange: PropTypes.func,
+}.isRequired;
