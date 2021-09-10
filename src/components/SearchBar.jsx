@@ -1,7 +1,10 @@
 // implement SearchBar component here
 import React, { Component } from 'react';
+import TextInput from './TextInput';
+import FavoriteInput from './FavoriteInput';
+import SelectGenre from './SelectGenre ';
 
-class SearchBar extends Component {
+export default class SearchBar extends Component {
   render() {
     const { searchText,
       onSearchTextChange,
@@ -12,36 +15,10 @@ class SearchBar extends Component {
 
     return (
       <form data-testid="search-bar-form">
-        <label htmlFor="add-txt" data-testid="text-input-label">
-          Inclui o texto:
-          <input
-            type="text"
-            name="add-txt"
-            id="add-txt"
-            data-testid="text-input"
-            value={ searchText }
-            onChange={ onSearchTextChange }
-          />
-        </label>
-
-        <label htmlFor="favorit" data-testid="checkbox-input-label">
-          Mostrar somente favoritos
-          <input
-            type="checkbox"
-            name="favorit"
-            id="favorit"
-            data-testid="checkbox-input"
-            checked={ bookmarkedOnly }
-            value={ bookmarkedOnly }
-            onChange={ onBookmarkedChange }
-          />
-        </label>
+        <TextInput value={ searchText } onChange={ onSearchTextChange } />
+        <FavoriteInput checked={ bookmarkedOnly } onChange={ onBookmarkedChange } />
+        <SelectGenre value={ selectedGenre } onChange={ onSelectedGenreChange } />
       </form>
     );
   }
 }
-
-SearchBar.propTypes = {
-
-};
-export default SearchBar;
