@@ -1,6 +1,6 @@
 // implement AddMovie component here
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Title from './addMoviecomp/Title';
 import Subtitle from './addMoviecomp/Subtitle';
 import ImagePath from './addMoviecomp/ImagePath';
@@ -25,11 +25,25 @@ export default class AddMovie extends Component {
   }
 
   handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
+    // forma1
+    // this.setState({ [event.target.name]: event.target.value });
+    // forma2
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
   }
 
   handleSubmit(event) {
     event.preventDefault();
+    const { onClick } = this.props;
+    onClick(this.state);
+    this.setState({
+      subtitle: '',
+      title: '',
+      imagePath: '',
+      storyline: '',
+      rating: 0,
+      genre: 'action',
+    });
   }
 
   render() {
@@ -49,6 +63,6 @@ export default class AddMovie extends Component {
   }
 }
 
-// AddMovie.propTypes = {
-//   onClick: PropTypes.func.isRequired,
-// };
+AddMovie.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
