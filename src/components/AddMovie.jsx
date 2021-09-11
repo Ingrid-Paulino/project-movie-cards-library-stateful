@@ -1,6 +1,6 @@
 // implement AddMovie component here
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import Title from './addMoviecomp/Title';
 import Subtitle from './addMoviecomp/Subtitle';
 import ImagePath from './addMoviecomp/ImagePath';
@@ -49,6 +49,6 @@ export default class AddMovie extends Component {
   }
 }
 
-AddMovie.propTypes = {
-  onClick: PropTypes.func.isRequired,
-};
+// AddMovie.propTypes = {
+//   onClick: PropTypes.func.isRequired,
+// };
