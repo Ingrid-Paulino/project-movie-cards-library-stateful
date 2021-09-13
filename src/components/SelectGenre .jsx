@@ -9,7 +9,7 @@ export default class SelectGenre extends Component {
         Filtrar por gênero
         <select
           data-testid="select-input"
-          name="select-genre"
+          name="selectedGenre"
           id="select-genre"
           value={ value }
           onChange={ onChange }

@@ -56,7 +56,6 @@ export default class AddMovie extends Component {
         <Storyline value={ storyline } onChange={ this.handleChange } />
         <Rating value={ rating } onChange={ this.handleChange } />
         <Genre value={ genre } onChange={ this.handleChange } />
-
         <button type="submit" data-testid="send-button">Adicionar filme</button>
       </form>
     );

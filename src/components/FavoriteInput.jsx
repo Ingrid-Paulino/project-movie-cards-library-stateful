@@ -9,7 +9,7 @@ export default class FavoriteInput extends Component {
         Mostrar somente favoritos
         <input
           type="checkbox"
-          name="favorite"
+          name="bookmarkedOnly"
           id="favorite"
           data-testid="checkbox-input"
           checked={ checked }

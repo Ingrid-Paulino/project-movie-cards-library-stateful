@@ -9,7 +9,7 @@ export default class TextInput extends Component {
         Inclui o texto:
         <input
           type="text"
-          name="text-input"
+          name="searchText"
           id="text-input"
           data-testid="text-input"
           value={ value }
