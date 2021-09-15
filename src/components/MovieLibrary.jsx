@@ -23,11 +23,9 @@ class MovieLibrary extends Component {
     this.addNewMovie = this.addNewMovie.bind(this);
   }
 
-  handleChange(event) {
-    const { name } = event.target;
-    const value = event.target.type === 'checkbox'
-      ? event.target.checked
-      : event.target.value;
+  handleChange({ target }) {
+    const { name, type } = target;
+    const value = type === 'checkbox' ? target.checked : target.value;
     this.setState({ [name]: value });
   }
 
@@ -61,7 +59,7 @@ class MovieLibrary extends Component {
       this.setState({
         movies: movies.filter(({ title, subtitle, storyline }) => {
           const boxInfo = `${title}, ${subtitle}, ${storyline}`;
-          return boxInfo.includes(event.targuet.value);
+          return boxInfo.includes(event.target.value);
         }),
       });
     }
@@ -69,7 +67,10 @@ class MovieLibrary extends Component {
   }
 
   addNewMovie(movie) {
-    this.setState(({ movies }) => ({ movies: [...movies, movie] }));
+    const { movies } = this.state;
+    this.setState({
+      movies: [...movies, movie],
+    });
   }
 
   render() {
